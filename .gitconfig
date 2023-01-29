@@ -1,0 +1,5 @@
+[user]
+	name = asifaly
+	email = asif@venzotechnologies.com
+[core]
+	excludesfile = /Users/asif/.gitignore_global
