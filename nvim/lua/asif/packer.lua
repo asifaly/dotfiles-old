@@ -6,6 +6,18 @@ return require("packer").startup(function(use)
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
 	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make", cond = vim.fn.executable("make") == 1 })
+	use({
+		"folke/todo-comments.nvim",
+		requires = "nvim-lua/plenary.nvim",
+		config = function()
+			require("todo-comments").setup({
+				-- your configuration comes here
+				-- or leave it empty to use the default settings
+				-- refer to the configuration section below
+			})
+		end,
+	})
+	use({ 'christoomey/vim-tmux-navigator' })
 	-- use({
 	-- 	"rose-pine/neovim",
 	-- 	as = "rose-pine",
@@ -14,7 +26,8 @@ return require("packer").startup(function(use)
 	-- 		vim.cmd("colorscheme rose-pine")
 	-- 	end,
 	-- })
-	use ({ "catppuccin/nvim", 
+	use({
+		"catppuccin/nvim",
 		as = "catppuccin",
 		config = function()
 			require("catppuccin").setup()
@@ -29,10 +42,10 @@ return require("packer").startup(function(use)
 	})
 	use("tpope/vim-fugitive")
 	use("lewis6991/gitsigns.nvim")
-	use {
-		'nvim-lualine/lualine.nvim',
-		requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-	}
+	use({
+		"nvim-lualine/lualine.nvim",
+		requires = { "kyazdani42/nvim-web-devicons", opt = true },
+	})
 	use({
 		"numToStr/Comment.nvim",
 		config = function()
@@ -73,7 +86,7 @@ return require("packer").startup(function(use)
 			{ "rafamadriz/friendly-snippets" }, -- Optional
 		},
 	})
-	use {
+	use({
 		"zbirenbaum/copilot.lua",
 		cmd = "Copilot",
 		event = "InsertEnter",
@@ -83,12 +96,12 @@ return require("packer").startup(function(use)
 				panel = { enabled = false },
 			})
 		end,
-	}
-	use {
+	})
+	use({
 		"zbirenbaum/copilot-cmp",
 		after = { "copilot.lua" },
 		config = function()
 			require("copilot_cmp").setup()
-		end
-	}
+		end,
+	})
 end)
