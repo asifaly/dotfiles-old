@@ -146,6 +146,11 @@ _G.packer_plugins = {
     path = "/Users/asif/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
+  harpoon = {
+    loaded = true,
+    path = "/Users/asif/.local/share/nvim/site/pack/packer/start/harpoon",
+    url = "https://github.com/ThePrimeagen/harpoon"
+  },
   ["indent-blankline.nvim"] = {
     loaded = true,
     path = "/Users/asif/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
@@ -250,10 +255,6 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: catppuccin
-time([[Config for catppuccin]], true)
-try_loadstring("\27LJ\2\ng\0\0\3\0\6\0\n6\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\0016\0\3\0009\0\4\0'\2\5\0B\0\2\1K\0\1\0\27colorscheme catppuccin\bcmd\bvim\nsetup\15catppuccin\frequire\0", "config", "catppuccin")
-time([[Config for catppuccin]], false)
 -- Config for: neodev.nvim
 time([[Config for neodev.nvim]], true)
 try_loadstring("\27LJ\2\n4\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\vneodev\frequire\0", "config", "neodev.nvim")
@@ -262,6 +263,10 @@ time([[Config for neodev.nvim]], false)
 time([[Config for Comment.nvim]], true)
 try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fComment\frequire\0", "config", "Comment.nvim")
 time([[Config for Comment.nvim]], false)
+-- Config for: catppuccin
+time([[Config for catppuccin]], true)
+try_loadstring("\27LJ\2\ng\0\0\3\0\6\0\n6\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\0016\0\3\0009\0\4\0'\2\5\0B\0\2\1K\0\1\0\27colorscheme catppuccin\bcmd\bvim\nsetup\15catppuccin\frequire\0", "config", "catppuccin")
+time([[Config for catppuccin]], false)
 -- Config for: todo-comments.nvim
 time([[Config for todo-comments.nvim]], true)
 try_loadstring("\27LJ\2\n?\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\18todo-comments\frequire\0", "config", "todo-comments.nvim")

@@ -61,6 +61,10 @@ return require("packer").startup(function(use)
 		end,
 	})
 	use({
+		"ThePrimeagen/harpoon",
+		requires = { "nvim-lua/plenary.nvim" },
+	})
+	use({
 		"jose-elias-alvarez/null-ls.nvim",
 		requires = { "nvim-lua/plenary.nvim" },
 	})
