@@ -41,7 +41,8 @@ alias python='python3'
 alias bu="brew upgrade && brew update && brew cleanup"
 alias bl="brew ls"
 
-# Git Aliases
+# Git Aliasesa
+alias lg="lazygit"
 alias gs="git status"
 alias gpa="git push -u origin --all"
 alias gpm="git push -u origin master"

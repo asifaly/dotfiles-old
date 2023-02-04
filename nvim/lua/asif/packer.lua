@@ -17,7 +17,7 @@ return require("packer").startup(function(use)
 			})
 		end,
 	})
-	use({ 'christoomey/vim-tmux-navigator' })
+	use({ "christoomey/vim-tmux-navigator" })
 	-- use({
 	-- 	"rose-pine/neovim",
 	-- 	as = "rose-pine",
@@ -26,14 +26,28 @@ return require("packer").startup(function(use)
 	-- 		vim.cmd("colorscheme rose-pine")
 	-- 	end,
 	-- })
+	-- use({
+	-- 	"catppuccin/nvim",
+	-- 	as = "catppuccin",
+	-- 	config = function()
+	-- 		require("catppuccin").setup()
+	-- 		vim.cmd("colorscheme catppuccin")
+	-- 	end,
+	-- })
 	use({
-		"catppuccin/nvim",
-		as = "catppuccin",
+		"bluz71/vim-nightfly-colors",
+		as = "nightfly",
 		config = function()
-			require("catppuccin").setup()
-			vim.cmd("colorscheme catppuccin")
+			vim.cmd("colorscheme nightfly")
 		end,
 	})
+	-- use({
+	-- 	"haishanh/night-owl.vim",
+	-- 	as = "nightowl",
+	-- 	config = function()
+	-- 		vim.cmd("colorscheme night-owl")
+	-- 	end,
+	-- })
 	use({
 		"nvim-treesitter/nvim-treesitter",
 		run = function()
