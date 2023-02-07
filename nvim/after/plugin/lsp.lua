@@ -1,7 +1,14 @@
-local lsp = require('lsp-zero')
-local cmp = require('cmp')
+local lsp = require("lsp-zero")
+local cmp = require("cmp")
+local has_words_before = function()
+	if vim.api.nvim_buf_get_option(0, "buftype") == "prompt" then
+		return false
+	end
+	local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+	return col ~= 0 and vim.api.nvim_buf_get_text(0, line - 1, 0, line - 1, col, {})[1]:match("^%s*$") == nil
+end
 
-lsp.preset('recommended')
+lsp.preset("recommended")
 
 lsp.ensure_installed({
 	"emmet_ls",
@@ -16,29 +23,43 @@ lsp.ensure_installed({
 lsp.setup_nvim_cmp({
 	sources = {
 		-- This one provides the data from copilot.
-		{ name = 'copilot' },
+		{ name = "copilot", keyword_length = 0 },
 
 		--- These are the default sources for lsp-zero
-		{ name = 'path' },
-		{ name = 'nvim_lsp', keyword_length = 3 },
-		{ name = 'buffer', keyword_length = 3 },
-		{ name = 'luasnip', keyword_length = 2 },
+		{ name = "path" },
+		{ name = "nvim_lsp", keyword_length = 3 },
+		{ name = "buffer", keyword_length = 3 },
+		{ name = "luasnip", keyword_length = 2 },
 	},
 	mapping = lsp.defaults.cmp_mappings({
-		['<CR>'] = cmp.mapping.confirm({
+		["<CR>"] = cmp.mapping.confirm({
 			-- documentation says this is important.
 			-- I don't know why.
 			behavior = cmp.ConfirmBehavior.Replace,
 			select = false,
-		})
-	})
+		}),
+		["<Tab>"] = vim.schedule_wrap(function(fallback)
+			if cmp.visible() and has_words_before() then
+				cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
+			else
+				fallback()
+			end
+		end),
+		["<S-Tab>"] = vim.schedule_wrap(function(fallback)
+			if cmp.visible() and has_words_before() then
+				cmp.select_prev_item({ behavior = cmp.SelectBehavior })
+			else
+				fallback()
+			end
+		end),
+	}),
 })
 
-lsp.configure('volar', {
+lsp.configure("volar", {
 	filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
 })
 
-lsp.configure('eslint', {
+lsp.configure("eslint", {
 
 	filetypes = {
 		"javascript",
@@ -55,12 +76,12 @@ lsp.configure('eslint', {
 	},
 })
 
-lsp.configure('sumneko_lua', {
+lsp.configure("sumneko_lua", {
 	Lua = {
-		diagnostics = { globals = { 'vim' }, disable = { "lowercase-global" } },
+		diagnostics = { globals = { "vim" }, disable = { "lowercase-global" } },
 		workspace = {
 			library = vim.api.nvim_get_runtime_file("", true),
-			checkThirdParty = false
+			checkThirdParty = false,
 		},
 		telemetry = { enable = false },
 	},
