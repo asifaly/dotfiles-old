@@ -12,7 +12,7 @@ lsp.preset("recommended")
 
 lsp.ensure_installed({
 	"emmet_ls",
-	"sumneko_lua",
+	"lua_ls",
 	"tailwindcss",
 	"eslint",
 	"volar",
@@ -76,7 +76,7 @@ lsp.configure("eslint", {
 	},
 })
 
-lsp.configure("sumneko_lua", {
+lsp.configure("lua_ls", {
 	Lua = {
 		diagnostics = { globals = { "vim" }, disable = { "lowercase-global" } },
 		workspace = {
