@@ -20,7 +20,13 @@ eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 
 # General Aliases
+alias tf="fd --type f --hidden --exclude .git | fzf-tmux -p | xargs nvim"
+alias nf="fd --type f --hidden --exclude .git | fzf | xargs nvim"
 alias ..="cd .."
+alias gitauth="ssh-add --apple-use-keychain ~/.ssh/id_ed25519"
+
+alias mknvmrc="node --version > .nvmrc"
+
 alias ~=" cd ~"
 alias v="nvim"
 alias n="nvim"
@@ -42,7 +48,7 @@ alias bu="brew upgrade && brew update && brew cleanup"
 alias bl="brew ls"
 
 # Git Aliasesa
-alias lg="lazygit"
+alias gi="lazygit"
 alias gs="git status"
 alias gpa="git push -u origin --all"
 alias gpm="git push -u origin master"
