@@ -1,4 +1,11 @@
 -- [[ options.lua ]]
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+vim.g.python3_host_prog = "/usr/bin/python3"
+vim.g.python2_host_prog = "/usr/bin/python2"
+vim.g.loaded_ruby_provider = 0
+vim.g.loaded_perl_provider = 0
+
 local o = vim.opt
 o.clipboard = "unnamedplus"
 o.hlsearch = true
@@ -20,13 +27,9 @@ o.undodir = os.getenv("HOME") .. "/.vim/undodir"
 o.completeopt = "menuone,noselect"
 o.isfname:append("@-@")
 
-vim.g.python3_host_prog = "/usr/bin/python3"
-vim.g.python2_host_prog = "/usr/bin/python2"
-vim.g.loaded_ruby_provider = 0
-vim.g.loaded_perl_provider = 0
-vim.g.netrw_browse_split = 0
-vim.g.netrw_banner = 0
-vim.g.netrw_winsize = 25
+-- vim.g.netrw_browse_split = 0
+-- vim.g.netrw_banner = 0
+-- vim.g.netrw_winsize = 25
 
 local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
 vim.api.nvim_create_autocmd("TextYankPost", {

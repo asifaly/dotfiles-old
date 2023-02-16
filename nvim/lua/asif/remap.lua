@@ -2,7 +2,8 @@ vim.g.mapleader = " "
 
 local map = vim.keymap.set
 
-map("n", "<C-p>", vim.cmd.Ex, { desc = "File Explorer"})
+-- map("n", "<C-p>", vim.cmd.Ex, { desc = "File Explorer"})
+map("n", "<C-p>", ":NvimTreeFocus<CR>", { desc = "File Explorer"})
 map("n", "[d", vim.diagnostic.goto_prev, { desc = "Diagnostic Previous"})
 map("n", "]d", vim.diagnostic.goto_next, { desc = "Diagnostic Next"})
 map("n", "<Leader>e", vim.diagnostic.open_float, { desc = "Diagnostic Open Float"})
@@ -32,8 +33,8 @@ map("n", "<C-h>", "<C-w>h", { desc = "Window Left"} )
 map("n", "<C-j>", "<C-w>j", { desc = "Window Down"} )
 map("n", "<C-k>", "<C-w>k", { desc = "Window Up" })
 map("n", "<C-l>", "<C-w>l", { desc = "Window Right"})
-map("n", "<TAB>", ":bn<CR>", { desc = "Next Tab"})
-map("n", "<S-TAB>", ":bp<CR>", { desc = "Previous Tab"})
+-- map("n", "<TAB>", ":bn<CR>", { desc = "Next Tab"})
+-- map("n", "<S-TAB>", ":bp<CR>", { desc = "Previous Tab"})
 map("n", "<A-j>", ":m .+1<CR>==", { desc = "N - Line Down"})
 map("n", "<A-k>", ":m .-2<CR>==", { desc = "N - Line Up"})
 map("i", "<A-j>", "<Esc>:m .+1<CR>==gi", { desc = "I - Line Down"})
