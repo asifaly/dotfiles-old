@@ -3,7 +3,7 @@ vim.g.mapleader = " "
 local map = vim.keymap.set
 
 -- map("n", "<C-p>", vim.cmd.Ex, { desc = "File Explorer"})
-map("n", "<C-p>", ":NvimTreeFocus<CR>", { desc = "File Explorer"})
+map("n", "<C-p>", ":NvimTreeToggle<CR>", { desc = "File Explorer"})
 map("n", "[d", vim.diagnostic.goto_prev, { desc = "Diagnostic Previous"})
 map("n", "]d", vim.diagnostic.goto_next, { desc = "Diagnostic Next"})
 map("n", "<Leader>e", vim.diagnostic.open_float, { desc = "Diagnostic Open Float"})
