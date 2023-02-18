@@ -18,13 +18,23 @@ return require("packer").startup(function(use)
 		end,
 	})
 	use({ "christoomey/vim-tmux-navigator" })
+	-- use({
+	-- 	"bluz71/vim-nightfly-colors",
+	-- 	as = "nightfly",
+	-- 	config = function()
+	-- 		vim.cmd("colorscheme nightfly")
+	-- 	end,
+	-- })
 	use({
-		"bluz71/vim-nightfly-colors",
-		as = "nightfly",
-		config = function()
-			vim.cmd("colorscheme nightfly")
-		end,
+		"navarasu/onedark.nvim",
 	})
+	-- use({
+	-- 	"ellisonleao/gruvbox.nvim",
+	-- 	as = "gruvbox",
+	-- 	config = function()
+	-- 		vim.cmd("colorscheme gruvbox")
+	-- 	end,
+	-- })
 	use({
 		"nvim-treesitter/nvim-treesitter",
 		run = function()

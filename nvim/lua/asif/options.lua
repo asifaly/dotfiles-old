@@ -6,26 +6,26 @@ vim.g.python2_host_prog = "/usr/bin/python2"
 vim.g.loaded_ruby_provider = 0
 vim.g.loaded_perl_provider = 0
 
-local o = vim.opt
-o.clipboard = "unnamedplus"
-o.hlsearch = true
-o.nu = true
-o.rnu = true
-o.mouse = "a"
-o.breakindent = true
-o.smartindent = true
-o.ignorecase = true
-o.smartcase = true
-o.updatetime = 250
-o.signcolumn = "yes"
-o.termguicolors = true
-o.undofile = true
-o.backupdir = os.getenv("HOME") .. "/.vim/backup"
-o.directory = os.getenv("HOME") .. "/.vim/swap"
-o.undodir = os.getenv("HOME") .. "/.vim/undodir"
+vim.opt.clipboard = "unnamedplus"
+vim.opt.hlsearch = true
+vim.opt.nu = true
+vim.opt.rnu = true
+vim.opt.mouse = "a"
+vim.opt.breakindent = true
+vim.opt.smartindent = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+vim.opt.updatetime = 250
+vim.opt.signcolumn = "yes"
+vim.opt.termguicolors = true
+vim.opt.undofile = true
+vim.opt.completeopt = "menuone,noselect"
+vim.opt.isfname:append("@-@")
+
+vim.opt.backupdir = os.getenv("HOME") .. "/.vim/backup"
+vim.opt.directory = os.getenv("HOME") .. "/.vim/swap"
+vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 -- Set completeopt to have a better completion experience
-o.completeopt = "menuone,noselect"
-o.isfname:append("@-@")
 
 -- vim.g.netrw_browse_split = 0
 -- vim.g.netrw_banner = 0

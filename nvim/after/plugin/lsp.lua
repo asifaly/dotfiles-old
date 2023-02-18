@@ -38,14 +38,14 @@ lsp.setup_nvim_cmp({
 			behavior = cmp.ConfirmBehavior.Replace,
 			select = false,
 		}),
-		["<Tab>"] = vim.schedule_wrap(function(fallback)
+		["<Down>"] = vim.schedule_wrap(function(fallback)
 			if cmp.visible() and has_words_before() then
 				cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
 			else
 				fallback()
 			end
 		end),
-		["<S-Tab>"] = vim.schedule_wrap(function(fallback)
+		["<Up>"] = vim.schedule_wrap(function(fallback)
 			if cmp.visible() and has_words_before() then
 				cmp.select_prev_item({ behavior = cmp.SelectBehavior })
 			else
