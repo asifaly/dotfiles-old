@@ -15,18 +15,4 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 require("lazy").setup("plugins")
-
---[[luasnip.lua]]
--- [[ telescope.lua ]]
-
--- [[ null-ls.lua ]]
--- local null_ls = require("null-ls")
-
--- [[ lspconfig.lua ]]
-
--- [[ harpoon.lua ]]
-
--- [[ fugitive]]
-
-require("asif.remap")
-require("asif.options")
+require("asif")
