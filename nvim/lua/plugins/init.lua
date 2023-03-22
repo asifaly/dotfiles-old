@@ -1,7 +1,14 @@
 return {
+	"tpope/vim-rails",
 	"tpope/vim-sleuth",
+	"tpope/vim-endwise",
 	"christoomey/vim-tmux-navigator",
 	"tpope/vim-fugitive",
+	{
+		"nvim-treesitter/nvim-treesitter-textobjects",
+		after = "nvim-treesitter",
+		requires = "nvim-treesitter/nvim-treesitter",
+	},
 	{
 		"lukas-reineke/indent-blankline.nvim",
 		config = function()
@@ -13,6 +20,10 @@ return {
 				show_trailing_blankline_indent = false,
 			})
 		end,
+	},
+	{
+		"windwp/nvim-autopairs",
+		config = true,
 	},
 	{
 		"nvim-telescope/telescope-fzf-native.nvim",

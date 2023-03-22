@@ -18,6 +18,7 @@ export PATH=$PATH:/Users/asif/Library/Python/3.9/bin/locust
 #Loads the Starship Prompt
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
+eval "$(rbenv init - zsh)"
 
 # General Aliases
 alias tf="fd --type f --hidden --exclude .git | fzf-tmux -p | xargs nvim"
@@ -72,6 +73,7 @@ alias mxsrc="tmux source ~/.tmux.conf"
 #elxir
 alias elcon="docker run -it --rm elixir"
 alias elbash="docker run -it --rm elixir bash"
+alias supatypes="npx supabase gen types typescript --project-id "sqtnxtyswztlpiwembfr" > src/types.ts"
 
 export EDITOR='vim'
 
@@ -112,3 +114,5 @@ if [ -f '/Users/asif/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/asif/googl
 if [ -f '/Users/asif/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/asif/google-cloud-sdk/completion.zsh.inc'; fi
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
+export ANDROID_HOME="/Users/$USER/Library/Android/SDK"
+export PATH="$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools"

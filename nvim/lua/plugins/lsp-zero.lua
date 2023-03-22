@@ -21,6 +21,7 @@ return {
 	},
 	config = function()
 		local lsp = require("lsp-zero")
+		local cmp_autopairs = require("nvim-autopairs.completion.cmp")
 		local cmp = require("cmp")
 		local has_words_before = function()
 			if vim.api.nvim_buf_get_option(0, "buftype") == "prompt" then
@@ -40,6 +41,7 @@ return {
 			"volar",
 			"html",
 			"eslint",
+			"solargraph"
 		})
 		lsp.setup_nvim_cmp({
 			sources = {
@@ -74,6 +76,9 @@ return {
 					end
 				end),
 			}),
+		})
+		lsp.configure("solargraph", {
+			filetypes = { "ruby"},
 		})
 		lsp.configure("volar", {
 			filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
@@ -135,8 +140,9 @@ return {
 		end)
 
 		vim.cmd([[autocmd BufWritePre *.vue,*.tsx,*.ts,*.jsx,*.js EslintFixAll]])
-		-- vim.cmd([[autocmd BufWritePre <buffer> Format]])
 
 		lsp.setup()
+
+		cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 	end,
 }
