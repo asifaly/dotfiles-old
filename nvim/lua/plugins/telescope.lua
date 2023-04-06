@@ -3,19 +3,24 @@ return {
 	version = "0.1.1",
 	dependencies = { { "nvim-lua/plenary.nvim" } },
 	config = function()
+		local builtin = require("telescope.builtin")
+		local map = vim.keymap.set
+		local actions = require("telescope.actions")
+		local trouble = require("trouble.providers.telescope")
+
 		require("telescope").setup({
 			defaults = {
 				mappings = {
 					i = {
 						["<C-u>"] = false,
 						["<C-d>"] = false,
+						["<c-t>"] = trouble.open_with_trouble,
 					},
+					n = { ["<c-t>"] = trouble.open_with_trouble },
 				},
 				file_ignore_patterns = { "node_modules" },
 			},
 		})
-		local builtin = require("telescope.builtin")
-		local map = vim.keymap.set
 		-- See `:help telescope.builtin`
 		map("n", "<leader>'", builtin.keymaps, { desc = "['] List Key Maps" })
 		map("n", "<leader>?", builtin.oldfiles, { desc = "[?] Find recently opened files" })

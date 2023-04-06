@@ -9,7 +9,8 @@ export LC_ALL=en_US.UTF-8
 
 export PATH=$PATH:~/dev/flutter/bin
 export PATH=$PATH:$HOME/.pub-cache/bin
-export PATH=$PATH:/Users/asif/Library/Python/3.9/bin/locust
+# export PATH=$PATH:/Users/asif/Library/Python/3.9/bin/locust
+export PATH="$HOME/.cargo/bin:$PATH"
 
 # export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 # export PUPPETEER_EXECUTABLE_PATH="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
@@ -54,13 +55,15 @@ alias gs="git status"
 alias gpa="git push -u origin --all"
 alias gpm="git push -u origin master"
 alias gpd="git push -u origin develop"
-alias gcm="git checkout master"
+alias gcm="git checkout main"
 alias gcd="git checkout develop"
+alias gmd="git merge develop"
+alias gupd="gcm && gmd && gpa && gcd"
 alias ga="git add ."
 alias gst="git stash"
 alias gstd="git stash drop"
 alias gstp="git stash pop"
-alias gcm="git commit -m"
+alias gcom="git commit -m"
 
 #tmux
 alias mxn="tmux -2 new -s"
@@ -71,11 +74,11 @@ alias mxconf="v ~/.tmux.conf"
 alias mxsrc="tmux source ~/.tmux.conf"
 
 #elxir
-alias elcon="docker run -it --rm elixir"
-alias elbash="docker run -it --rm elixir bash"
+# alias elcon="docker run -it --rm elixir"
+# alias elbash="docker run -it --rm elixir bash"
 alias supatypes="npx supabase gen types typescript --project-id "sqtnxtyswztlpiwembfr" > src/types.ts"
 
-export EDITOR='vim'
+export EDITOR='neovim'
 
 # Load Zsh Plugins
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -108,19 +111,17 @@ add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/asif/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/asif/google-cloud-sdk/path.zsh.inc'; fi
+# if [ -f '/Users/asif/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/asif/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/asif/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/asif/google-cloud-sdk/completion.zsh.inc'; fi
-export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
-export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
-export ANDROID_HOME="/Users/$USER/Library/Android/SDK"
-export PATH="$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools"
+# if [ -f '/Users/asif/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/asif/google-cloud-sdk/completion.zsh.inc'; fi
+# export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+# export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
 
 # pnpm
-export PNPM_HOME="/Users/asif/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
+# export PNPM_HOME="/Users/asif/Library/pnpm"
+# case ":$PATH:" in
+  # *":$PNPM_HOME:"*) ;;
+  # *) export PATH="$PNPM_HOME:$PATH" ;;
+# esac
 # pnpm end

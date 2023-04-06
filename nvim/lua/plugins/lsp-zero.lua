@@ -41,7 +41,6 @@ return {
 			"volar",
 			"html",
 			"eslint",
-			"solargraph"
 		})
 		lsp.setup_nvim_cmp({
 			sources = {
@@ -50,7 +49,7 @@ return {
 
 				--- These are the default sources for lsp-zero
 				{ name = "path" },
-				{ name = "nvim_lsp", keyword_length = 3 },
+				{ name = "nvim_lsp", keyword_length = 1 },
 				{ name = "buffer", keyword_length = 3 },
 				{ name = "luasnip", keyword_length = 2 },
 			},
@@ -77,9 +76,6 @@ return {
 				end),
 			}),
 		})
-		lsp.configure("solargraph", {
-			filetypes = { "ruby"},
-		})
 		lsp.configure("volar", {
 			filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
 		})
@@ -101,13 +97,15 @@ return {
 		})
 
 		lsp.configure("lua_ls", {
-			Lua = {
-				diagnostics = { globals = { "vim" }, disable = { "lowercase-global" } },
-				workspace = {
-					library = vim.api.nvim_get_runtime_file("", true),
-					checkThirdParty = false,
+			settings = {
+				Lua = {
+					diagnostics = { globals = { "vim" } },
+					workspace = {
+						library = vim.api.nvim_get_runtime_file("", true),
+						checkThirdParty = false,
+					},
+					telemetry = { enable = false },
 				},
-				telemetry = { enable = false },
 			},
 		})
 		lsp.on_attach(function(_, bufnr)
@@ -139,9 +137,13 @@ return {
 			end, { desc = "Format current buffer with LSP" })
 		end)
 
-		vim.cmd([[autocmd BufWritePre *.vue,*.tsx,*.ts,*.jsx,*.js EslintFixAll]])
+		-- vim.cmd([[autocmd BufWritePre *.vue,*.tsx,*.ts,*.jsx,*.js EslintFixAll]])
 
 		lsp.setup()
+
+		vim.diagnostic.config({
+			virtual_text = true,
+		})
 
 		cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 	end,

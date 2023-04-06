@@ -1,5 +1,5 @@
 -- [[ options.lua ]]
-vim.cmd('highlight Normal guibg=none')
+vim.cmd("highlight Normal guibg=none")
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 vim.g.python3_host_prog = "/usr/bin/python3"
@@ -9,7 +9,7 @@ vim.g.loaded_perl_provider = 0
 
 vim.opt.clipboard = "unnamedplus"
 vim.opt.hlsearch = true
-vim.opt.nu = true
+-- vim.opt.nu = true
 vim.opt.rnu = true
 vim.opt.mouse = "a"
 vim.opt.breakindent = true
