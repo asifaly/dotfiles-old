@@ -6,8 +6,7 @@ return {
 	"tpope/vim-fugitive",
 	{
 		"nvim-treesitter/nvim-treesitter-textobjects",
-		after = "nvim-treesitter",
-		requires = "nvim-treesitter/nvim-treesitter",
+		dependencies = "nvim-treesitter/nvim-treesitter",
 	},
 	{
 		"lukas-reineke/indent-blankline.nvim",
