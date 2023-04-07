@@ -5,7 +5,6 @@ return {
 	config = function()
 		local builtin = require("telescope.builtin")
 		local map = vim.keymap.set
-		local actions = require("telescope.actions")
 		local trouble = require("trouble.providers.telescope")
 
 		require("telescope").setup({
