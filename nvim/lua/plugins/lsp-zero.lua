@@ -23,15 +23,18 @@ return {
 		{ "rafamadriz/friendly-snippets" },
 	},
 	config = function()
+		table.unpack = table.unpack or unpack
 		local lsp = require("lsp-zero").preset({})
 		local cmp_autopairs = require("nvim-autopairs.completion.cmp")
 		local cmp = require("cmp")
+
 		local has_words_before = function()
 			if vim.api.nvim_buf_get_option(0, "buftype") == "prompt" then
 				return false
 			end
-			local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-			return col ~= 0 and vim.api.nvim_buf_get_text(0, line - 1, 0, line - 1, col, {})[1]:match("^%s*$") == nil
+			local line, col = table.unpack(vim.api.nvim_win_get_cursor(0))
+			return col ~= 0 and
+			vim.api.nvim_buf_get_text(0, line - 1, 0, line - 1, col, {})[1]:match("^%s*$") == nil
 		end
 
 		lsp.ensure_installed({
@@ -42,6 +45,7 @@ return {
 			"volar",
 			"html",
 			"eslint",
+			"rust_analyzer",
 		})
 
 		cmp.setup({
@@ -71,11 +75,11 @@ return {
 				end),
 			},
 			sources = {
-				{ name = "copilot", keyword_length = 0 },
+				{ name = "copilot",  keyword_length = 0 },
 				{ name = "path" },
 				{ name = "nvim_lsp", keyword_length = 1 },
-				{ name = "buffer", keyword_length = 3 },
-				{ name = "luasnip", keyword_length = 2 },
+				{ name = "buffer",   keyword_length = 3 },
+				{ name = "luasnip",  keyword_length = 2 },
 			},
 		})
 
@@ -129,6 +133,16 @@ return {
 						checkThirdParty = false,
 					},
 					telemetry = { enable = false },
+				},
+			},
+		})
+
+		require("lspconfig").rust_analyzer.setup({
+			settings = {
+				["rust-analyzer"] = {
+					diagnostics = {
+						enable = false,
+					},
 				},
 			},
 		})

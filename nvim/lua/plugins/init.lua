@@ -1,9 +1,15 @@
 return {
-	"tpope/vim-rails",
+	-- "tpope/vim-rails",
+	{
+		"ggandor/leap.nvim",
+		config = function()
+			require("leap").add_default_mappings()
+		end,
+	},
 	"tpope/vim-sleuth",
 	"tpope/vim-endwise",
 	"christoomey/vim-tmux-navigator",
-	"tpope/vim-fugitive",
+	-- "tpope/vim-fugitive",
 	{
 		"nvim-treesitter/nvim-treesitter-textobjects",
 		dependencies = "nvim-treesitter/nvim-treesitter",
