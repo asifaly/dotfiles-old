@@ -27,6 +27,7 @@ return {
 		local lsp = require("lsp-zero").preset({})
 		local cmp_autopairs = require("nvim-autopairs.completion.cmp")
 		local cmp = require("cmp")
+		local nvim_lsp = require("lspconfig")
 
 		local has_words_before = function()
 			if vim.api.nvim_buf_get_option(0, "buftype") == "prompt" then
@@ -145,6 +146,11 @@ return {
 					},
 				},
 			},
+		})
+
+		require("lspconfig").denols.setup({
+			single_file_support = false,
+			root_dir = nvim_lsp.util.root_pattern("deno.json", "denoc.json"),
 		})
 
 		lsp.on_attach(function(_, bufnr)

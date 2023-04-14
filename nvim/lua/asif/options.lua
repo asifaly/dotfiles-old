@@ -9,7 +9,7 @@ vim.g.loaded_perl_provider = 0
 
 vim.opt.clipboard = "unnamedplus"
 vim.opt.hlsearch = true
--- vim.opt.nu = true
+vim.opt.nu = true
 vim.opt.rnu = true
 vim.opt.mouse = "a"
 vim.opt.breakindent = true
