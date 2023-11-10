@@ -11,6 +11,8 @@ export PATH=$PATH:~/dev/flutter/bin
 export PATH=$PATH:$HOME/.pub-cache/bin
 # export PATH=$PATH:/Users/asif/Library/Python/3.9/bin/locust
 export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
 
 # export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 # export PUPPETEER_EXECUTABLE_PATH="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
@@ -125,3 +127,10 @@ load-nvmrc
   # *) export PATH="$PNPM_HOME:$PATH" ;;
 # esac
 # pnpm end
+
+# bun completions
+[ -s "/Users/asif/.bun/_bun" ] && source "/Users/asif/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

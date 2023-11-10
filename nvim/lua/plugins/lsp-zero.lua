@@ -148,6 +148,10 @@ return {
 			},
 		})
 
+		require("lspconfig").ruby_ls.setup({})
+
+		require("lspconfig").tailwindcss.setup({})
+
 		require("lspconfig").denols.setup({
 			single_file_support = false,
 			root_dir = nvim_lsp.util.root_pattern("deno.json", "denoc.json"),

@@ -14,21 +14,16 @@ return {
 		"nvim-treesitter/nvim-treesitter-textobjects",
 		dependencies = "nvim-treesitter/nvim-treesitter",
 	},
-	{
-		"lukas-reineke/indent-blankline.nvim",
-		config = function()
-			require("indent_blankline").setup({
-				-- for example, context is off by default, use this to turn it on
-				show_current_context = true,
-				show_current_context_start = true,
-				char = "┊",
-				show_trailing_blankline_indent = false,
-			})
-		end,
-	},
+	{ "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
 	{
 		"windwp/nvim-autopairs",
 		config = true,
+	},
+	{
+		"nvim-telescope/telescope.nvim",
+		tag = "0.1.4",
+		-- or                            , branch = '0.1.x',
+		dependencies = { { "nvim-lua/plenary.nvim" } },
 	},
 	{
 		"nvim-telescope/telescope-fzf-native.nvim",
