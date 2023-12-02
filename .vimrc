@@ -1,8 +1,5 @@
 call plug#begin()
 
-Plug 'morhetz/gruvbox'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
 Plug 'haishanh/night-owl.vim'
 Plug 'itchyny/lightline.vim'
@@ -12,7 +9,6 @@ call plug#end()
 set nocompatible
 
 filetype plugin indent on
-
 
 syntax on
 colorscheme night-owl
@@ -58,16 +54,17 @@ set textwidth=80
 "set colorcolumn=+1
 "set colorcolumn=120
 set updatetime=300
+set laststatus=2
 
 highlight Comment cterm=italic
 
 let mapleader="\<space>"
 
 " airline configuration
-"let g:airline_theme='gruvbox'
-" let g:airline_powerline_fonts = 1
+"let g:airline_theme='nightowl'
+"let g:airline_powerline_fonts = 1
 "let g:airline#extensions#tabline#enabled = 1
-" let g:airline#extensions#tabline#tab_min_count = 2
+"let g:airline#extensions#tabline#tab_min_count = 2
 "let g:airline#extensions#tabline#left_sep = ' '
 "let g:airline#extensions#tabline#left_alt_sep = '|'
 "let g:airline#extensions#tabline#formatter = 'default'

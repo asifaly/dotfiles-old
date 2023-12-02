@@ -1,6 +1,5 @@
 return {
 	"nvim-telescope/telescope.nvim",
-	version = "0.1.1",
 	dependencies = { { "nvim-lua/plenary.nvim" } },
 	config = function()
 		local builtin = require("telescope.builtin")
@@ -18,6 +17,11 @@ return {
 					n = { ["<c-t>"] = trouble.open_with_trouble },
 				},
 				file_ignore_patterns = { "node_modules" },
+			},
+			pickers = {
+				find_files = {
+					theme = "ivy",
+				}
 			},
 		})
 		-- See `:help telescope.builtin`

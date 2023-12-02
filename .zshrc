@@ -7,12 +7,12 @@ export LC_ALL=en_US.UTF-8
 #export GOPATH=~/dev/go
 #export PATH=$PATH:$(go env GOPATH)/bin
 
-export PATH=$PATH:~/dev/flutter/bin
-export PATH=$PATH:$HOME/.pub-cache/bin
+#export PATH=$PATH:~/dev/flutter/bin
+#export PATH=$PATH:$HOME/.pub-cache/bin
 # export PATH=$PATH:/Users/asif/Library/Python/3.9/bin/locust
-export PATH="$HOME/.cargo/bin:$PATH"
-export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
-export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
+#export PATH="$HOME/.cargo/bin:$PATH"
+#export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+#export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
 
 # export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 # export PUPPETEER_EXECUTABLE_PATH="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
@@ -32,7 +32,7 @@ alias gitauth="ssh-add --apple-use-keychain ~/.ssh/id_ed25519"
 alias mknvmrc="node --version > .nvmrc"
 
 alias ~=" cd ~"
-alias v="nvim"
+alias v="vim"
 alias n="nvim"
 alias nrc="nvim ~/.config/nvim/init.lua"
 alias ~="cd ~"
@@ -41,10 +41,10 @@ alias vrc="nvim ~/.vimrc"
 alias c="clear"
 alias kbssh="ssh -t root@68.183.80.200"
 alias szrc="source ~/.zshrc"
-alias l="exa -laF --git --git-ignore --no-user --group-directories-first --icons"
-alias lt="exa -lDT --git-ignore --no-user"
-alias lg="exa -laFG --git-ignore --no-user --group-directories-first"
-alias ld="exa -lD --git-ignore --no-user"
+alias l="eza -laF --git --git-ignore --no-user --group-directories-first --icons"
+alias lt="eza -lDT --git-ignore --no-user"
+alias lg="eza -laFG --git-ignore --no-user --group-directories-first"
+alias ld="eza -lD --git-ignore --no-user"
 alias python='python3'
 
 #Brew Aliases
@@ -80,7 +80,7 @@ alias mxsrc="tmux source ~/.tmux.conf"
 # alias elbash="docker run -it --rm elixir bash"
 alias supatypes="npx supabase gen types typescript --project-id "sqtnxtyswztlpiwembfr" > src/types.ts"
 
-export EDITOR='neovim'
+export EDITOR='nvim'
 
 # Load Zsh Plugins
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -117,20 +117,5 @@ load-nvmrc
 
 # The next line enables shell command completion for gcloud.
 # if [ -f '/Users/asif/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/asif/google-cloud-sdk/completion.zsh.inc'; fi
-# export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
-# export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
 
-# pnpm
-# export PNPM_HOME="/Users/asif/Library/pnpm"
-# case ":$PATH:" in
-  # *":$PNPM_HOME:"*) ;;
-  # *) export PATH="$PNPM_HOME:$PATH" ;;
-# esac
-# pnpm end
 
-# bun completions
-[ -s "/Users/asif/.bun/_bun" ] && source "/Users/asif/.bun/_bun"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"

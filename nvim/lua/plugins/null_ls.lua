@@ -1,5 +1,5 @@
 return {
-	"jose-elias-alvarez/null-ls.nvim",
+	"nvimtools/none-ls.nvim",
 	dependencies = { "nvim-lua/plenary.nvim" },
 	config = function()
 		local null_ls = require("null-ls")
@@ -10,7 +10,6 @@ return {
 				null_ls.builtins.diagnostics.eslint_d,
 				null_ls.builtins.formatting.eslint_d,
 				null_ls.builtins.code_actions.eslint_d,
-				null_ls.builtins.formatting.rustfmt,
 				null_ls.builtins.diagnostics.erb_lint,
 				null_ls.builtins.formatting.erb_format,
 				null_ls.builtins.formatting.rubocop,

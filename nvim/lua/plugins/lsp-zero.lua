@@ -35,7 +35,7 @@ return {
 			end
 			local line, col = table.unpack(vim.api.nvim_win_get_cursor(0))
 			return col ~= 0 and
-			vim.api.nvim_buf_get_text(0, line - 1, 0, line - 1, col, {})[1]:match("^%s*$") == nil
+			    vim.api.nvim_buf_get_text(0, line - 1, 0, line - 1, col, {})[1]:match("^%s*$") == nil
 		end
 
 		lsp.ensure_installed({
@@ -46,7 +46,8 @@ return {
 			"volar",
 			"html",
 			"eslint",
-			"rust_analyzer",
+			"jsonls",
+			"ruby_ls"
 		})
 
 		cmp.setup({

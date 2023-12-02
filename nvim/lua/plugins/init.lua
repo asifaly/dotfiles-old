@@ -2,6 +2,7 @@ return {
 	-- "tpope/vim-rails",
 	{
 		"ggandor/leap.nvim",
+		event = "VeryLazy",
 		config = function()
 			require("leap").add_default_mappings()
 		end,
@@ -21,18 +22,21 @@ return {
 	},
 	{
 		"nvim-telescope/telescope.nvim",
+		event = "VeryLazy",
 		tag = "0.1.4",
 		-- or                            , branch = '0.1.x',
 		dependencies = { { "nvim-lua/plenary.nvim" } },
 	},
 	{
 		"nvim-telescope/telescope-fzf-native.nvim",
+		event = "VeryLazy",
 		dependencies = "nvim-telescope/telescope.nvim",
 		build = "make",
 		cond = vim.fn.executable("make") == 1,
 	},
 	{
 		"folke/todo-comments.nvim",
+		event = "VeryLazy",
 		dependencies = "nvim-lua/plenary.nvim",
 		config = true,
 	},
@@ -44,6 +48,7 @@ return {
 	},
 	{
 		"folke/trouble.nvim",
+		event = "VeryLazy",
 		dependencies = {
 			"kyazdani42/nvim-web-devicons",
 		},
@@ -56,6 +61,7 @@ return {
 	},
 	{
 		"nvim-tree/nvim-tree.lua",
+		event = "VeryLazy",
 		config = true,
 		version = "nightly", -- optional, updated every week. (see issue #1193)
 	},
@@ -83,4 +89,32 @@ return {
 		dependencies = { "copilot.lua" },
 		config = true,
 	},
+	{
+		"folke/which-key.nvim",
+		event = "VeryLazy",
+		init = function()
+			vim.o.timeout = true
+			vim.o.timeoutlen = 300
+		end,
+		opts = {
+			-- your configuration comes here
+			-- or leave it empty to use the default settings
+			-- refer to the configuration section below
+		}
+	},
+	{
+		"folke/noice.nvim",
+		event = "VeryLazy",
+		opts = {
+			-- add any options here
+		},
+		dependencies = {
+			-- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+			"MunifTanjim/nui.nvim",
+			-- OPTIONAL:
+			--   `nvim-notify` is only needed, if you want to use the notification view.
+			--   If not available, we use `mini` as the fallback
+			"rcarriga/nvim-notify",
+		}
+	}
 }
