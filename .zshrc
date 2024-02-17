@@ -3,6 +3,7 @@
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
+RUBY_YJIT_ENABLE=1
 
 #export GOPATH=~/dev/go
 #export PATH=$PATH:$(go env GOPATH)/bin

@@ -60,12 +60,6 @@ return {
 		},
 	},
 	{
-		"nvim-tree/nvim-tree.lua",
-		event = "VeryLazy",
-		config = true,
-		version = "nightly", -- optional, updated every week. (see issue #1193)
-	},
-	{
 		"numToStr/Comment.nvim",
 		config = true,
 	},
@@ -100,7 +94,7 @@ return {
 			-- your configuration comes here
 			-- or leave it empty to use the default settings
 			-- refer to the configuration section below
-		}
+		},
 	},
 	{
 		"folke/noice.nvim",
@@ -115,6 +109,6 @@ return {
 			--   `nvim-notify` is only needed, if you want to use the notification view.
 			--   If not available, we use `mini` as the fallback
 			"rcarriga/nvim-notify",
-		}
-	}
+		},
+	},
 }
