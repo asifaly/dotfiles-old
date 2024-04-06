@@ -76,6 +76,12 @@ alias mxa="tmux -2 a -t"
 alias mxconf="v ~/.tmux.conf"
 alias mxsrc="tmux source ~/.tmux.conf"
 
+#docker
+alias doup="docker-compose up"
+alias dodown="docker-compose down"
+alias dobuild="docker-compose up --build"
+alias dodbuild="docker-compose up -d --build"
+alias dodup="docker-compose up -d"
 #elxir
 # alias elcon="docker run -it --rm elixir"
 # alias elbash="docker run -it --rm elixir bash"
@@ -120,3 +126,6 @@ load-nvmrc
 # if [ -f '/Users/asif/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/asif/google-cloud-sdk/completion.zsh.inc'; fi
 
 
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
