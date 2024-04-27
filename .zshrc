@@ -42,7 +42,7 @@ alias vrc="nvim ~/.vimrc"
 alias c="clear"
 alias kbssh="ssh -t root@68.183.80.200"
 alias szrc="source ~/.zshrc"
-alias l="eza -laF --git --git-ignore --no-user --group-directories-first --icons"
+alias l="eza -laF --git --git-ignore --no-user --group-directories-first --icons --color=always"
 alias lt="eza -lDT --git-ignore --no-user"
 alias lg="eza -laFG --git-ignore --no-user --group-directories-first"
 alias ld="eza -lD --git-ignore --no-user"
@@ -129,3 +129,20 @@ load-nvmrc
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
+
+eval "$(fzf --zsh)"
+export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --hidden --follow --exclude .git'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_OPTS="
+  --walker-skip .git,node_modules,target
+  --preview 'tree -C {}'"
+export FZF_CTRL_T_OPTS="
+  --walker-skip .git,node_modules,target
+  --preview 'bat -n --color=always {}'
+  --bind 'ctrl-/:change-preview-window(down|hidden|)'"
+export FZF_CTRL_R_OPTS="
+  --preview 'echo {}' --preview-window up:3:hidden:wrap
+  --bind 'ctrl-/:toggle-preview'
+  --bind 'ctrl-y:execute-silent(echo -n {2..} | pbcopy)+abort'
+  --color header:italic
+  --header 'Press CTRL-Y to copy command into clipboard'"
